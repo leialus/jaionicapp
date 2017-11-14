@@ -1,0 +1,200 @@
+<div id="janelaLider" class="w-75" *ngIf="ativo && msg">
+
+
+	<nav class="w-100 navbar navbar-light" id="detailTile" style="background-color: #e3f2fd;">
+		
+
+		 <ul class="nav justify-content-center">
+		
+			
+		
+		  <li id="nav-item" >
+			<a class="nav-link" >
+				<h2>{{msg.nomeconstrucao}}</h2>
+			</a>
+		  </li>
+		  
+		  
+		</ul>
+		 
+		 
+		 <ul class="nav justify-content-end">
+		
+			
+		
+		  <li id="moveLider" class="nav-item" (click)="mousedownup()">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-secondary">Mover</button>
+			</a>
+		  </li>
+		  
+		  <li id="nav-item"  (click)="sairCasaLider('sair')">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-danger">Sair</button>
+			</a>
+		  </li>
+		  
+		</ul>
+		
+		
+	</nav>
+
+	
+	
+	<div id="consteudoconstrucaolider" *ngIf="msg.tipo == 'casadoliderestoque'">
+		
+		<div id="casalider" *ngIf="tipo == 'casadoliderestoque'">
+			
+			<div class="w-100 d-flex flex-column justify-content-center" id="colecaoConstrucoes">
+	
+				
+				<div class="w-100 d-flex align-items-cente">
+				
+					<p class="w-100 justify-content-center"><strong id="titulosublinhado">Estoque</strong></p>
+				</div>
+			</div>
+			
+			<div class="d-flex flex-wrap justify-content-center" id="colecaoConstrucoes"  style="padding-bottom: 5%; max-height: 400px; overflow-y: scroll;">
+			<div class="d-flex align-items-start" id="contentItemBuild" *ngFor="let item of msg.estoque"
+			[class.sobreItem]="item[0] == costrucaoOver" 
+			(mouseover)="changeStyle(item[0])" (mouseout)="changeStyle('')">
+			
+			  <div class="card" [ngClass]="color" > 
+			
+				<div class="card-footer">
+							
+							<table class="table table-sm centralizar">
+								<thead>
+									<tr>
+										<th>
+											<img width="25px" height="25px" src="{{item[3]}}" />
+										</th>
+										 <!--<th class="w-25">
+											<div class="stat-levels">
+
+											  <div class="stat-2 stat-bar">
+												<span *ngIf="item[1] != 0" class="stat-bar-rating" role="stat-bar" [style.width.%]="(((item[2])*100)/item[1])"> {{((item[2])*100)/item[1]}}% </span>
+												<span *ngIf="item[1] == 0" class="stat-bar-rating" role="stat-bar" style="width: 0%;"> 0% </span>
+											  </div>
+
+											</div>
+										</th>--> 
+										<th>
+											<label id="volumeitemestoque"> {{item[2]}}/{{item[1]}} </label>
+										</th>
+									</tr>
+								</thead>
+							</table>
+		
+				</div>
+			  </div>
+			 
+			</div>
+		</div>
+			
+			
+		</div>
+		
+		<div class="w-100" *ngIf="tipo == 'casadolidertrabalhadores'">
+			
+			<div class="w-100 d-flex flex-column justify-content-center" id="colecaoConstrucoes">
+	
+				
+				<div class="w-100 d-flex align-items-cente">
+				
+					<p class="w-100 justify-content-center"><strong id="titulosublinhado">Relação de Trabalhadores</strong></p>
+				</div>
+			</div>
+		
+		<div class="w-100 d-flex justify-content-center" id="colecaoConstrucoes">
+			<div  class="w-75 d-flex align-items-cente">
+				<table class="table table-sm">
+				  <thead>
+					<tr>
+					  <th class="centralizar">Trabalhadores</th>
+					  <th>Disponiveis</th>
+					  <th>Ocupados</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>{{msg.quantiatotaltrabalhadores}} </td>
+					  <td>{{msg.quantiatotaltrabalhadores-msg.quantiaemservico}}</td>
+					  <td>{{msg.quantiaemservico}}</td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+			
+		</div>
+		
+			
+		<div class="d-flex flex-wrap justify-content-center" id="colecaoConstrucoes"  style="padding-bottom: 5%; max-height: 400px; overflow-y: scroll;">
+			<div class="d-flex align-items-cente" id="contentItemBuild" *ngFor="let item of quantiaTrab; let i = index;" style="min-height: 125px;" 
+			[class.sobreItem]="item[0] == costrucaoOver" 
+			(mouseover)="changeStyle(item[0])" (mouseout)="changeStyle('')">
+			
+			  <div class="card" [ngClass]="color" > 
+			
+				<div class="bodyCard">
+
+					<h4 class="mx-auto card-title">{{item[0]}}</h4>
+						
+				</div>
+				<div class="card-footer">
+				 
+				 <table class="table table-sm centralizar">
+					  <thead>
+						<tr>
+						  <th class="centralizar">
+							{{item[2]}}/
+						  </th>
+						  <th class="centralizar">
+							<input [(ngModel)]="item[1]" type="number" min="0" max="{{item[2]}}" (ngModelChange)="alteraInput()" >
+						  </th>
+						  <th class="centralizar">
+							<button class="btn btn-success btn-sm" id="comfirmar" (click)="atualiza(item[0], item[1])">confirmar</button>
+						  </th>
+						</tr>
+					  </thead>
+					 
+				  </table>
+					
+				</div>
+			  </div>
+			 
+			</div>
+		</div>
+			
+	
+		</div>
+	
+		<nav class="w-100 navbar navbar-light" id="detailTilefooter" style="background-color: #e3f2fd; border-top: 1px solid #007bff;">
+			
+			<ul class="nav justify-content-start">
+			
+				
+			
+			  <li id="nav-item"  (click)="onNext(-1)">
+				<a class="nav-link" >
+					<button type="button" class="btn btn-success btn-sm"><-</button>
+				</a>
+			  </li>
+			  
+			  
+			</ul>
+		 
+			<ul class=" nav justify-content-end">
+				
+			  <li id="nav-item"  (click)="onNext(-1)">
+				<a class="nav-link" >
+					<button type="button" class="btn btn-success btn-sm">-></button>
+				</a>
+			  </li>
+			
+			</ul>
+			
+		</nav>
+	</div>
+
+</div>

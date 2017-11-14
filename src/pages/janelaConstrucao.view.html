@@ -1,0 +1,60 @@
+<div id="janelaLider" class="w-75" *ngIf="ativo">
+	
+
+	<nav class="w-100 navbar navbar-light" id="detailTile" style="background-color: #e3f2fd;">
+		
+
+		 <ul class="nav justify-content-center">
+		
+			
+		
+		<li id="nav-item" >
+			<a class="nav-link" >
+				<h2 *ngIf="msg">{{msg.nomeconstrucao}}</h2>
+				<h2 *ngIf="!msg">carregando...</h2>
+			</a>
+		</li>
+
+		  
+		</ul>
+		 
+		 
+		<ul class="nav justify-content-end">
+		
+			
+		
+		  <li id="moveConstrucao" class="nav-item" (click)="mousedownup()">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-secondary">Mover</button>
+			</a>
+		  </li>
+		  
+		  <li id="nav-item"  (click)="sairCasaLider('sair')">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-danger">Sair</button>
+			</a>
+		  </li>
+		  
+		</ul>
+		
+		
+	</nav>
+
+	<nav class="w-100 navbar navbar-light" id="detailTilefooter" style="background-color: #e3f2fd;">
+		
+		 
+		<ul class="w-100 nav justify-content-end">
+		
+		  <li id="moveConstrucao" class="nav-item" (click)="ondelete()">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-outline-danger btn-sm">Deletar</button>
+			</a>
+		  </li>
+		 
+		</ul>
+		
+		
+	</nav>
+	
+
+</div>

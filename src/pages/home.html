@@ -1,0 +1,33 @@
+
+
+<ion-content padding>
+
+	<section id="login">
+		<button type="button" id="glogin" class="btn btn-primary btn-lg btn-block">Login</button>
+		
+		<div *ngIf="resposta == 'nd'"  class="alert alert-primary" role="alert">
+			Clique em <strong>login</strong> para jogar ou se cadastrar!
+			
+		</div>
+		<div *ngIf="resposta == 'false'" class="alert alert-warning" role="alert">
+		  Criando cadastro...
+		</div>
+		<div *ngIf="resposta == 'ok' || resposta == 'true'" class="alert alert-success" role="alert">
+		  <strong>Conectado!</strong> Entrando no jogo...
+		</div>
+
+		
+		<div class="h-100  jumbotron">
+		  <h1 class="display-3">Noticia</h1>
+		  <p class="lead">aqui irão coisas</p>
+		  <hr class="my-4">
+		  <p>e aqui mais conteudo ou imagens?.</p>
+		  
+		</div>
+		
+		<div class="p-3 fixed-bottom">
+			<div class="p-3 mb-2 bg-light text-gray-dark"> Contato: lucas.r.n@hotmail.com.br</div>
+		</div>
+	</section>
+
+</ion-content>

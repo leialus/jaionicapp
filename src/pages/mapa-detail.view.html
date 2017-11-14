@@ -1,0 +1,141 @@
+<div class="w-75"  *ngIf="ativo">
+
+
+	<nav class="w-100 navbar navbar-light" id="detailTile" style="background-color: #e3f2fd;">
+		
+		<ul class="nav justify-content-center">
+		  
+		  <li id="nav-item"  *ngFor="let opcao of opcoes" (click)="onSelectMenuConstrucoes(opcao.nome)">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-primary">{{opcao.nome}}</button>
+			</a>
+		  </li>
+		  
+		</ul>
+		
+		 <ul id="moveDetail" class="nav justify-content-end">
+		
+		  <li id="nav-item"  (click)="mousedownup()">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-secondary">Mover</button>
+			</a>
+		  </li>
+		  
+		  <li id="nav-item"  (click)="onSelectMenuConstrucoes('sair')">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-danger">Sair</button>
+			</a>
+		  </li>
+		  
+		</ul>
+		
+		
+	</nav>
+
+	<div class="d-flex flex-wrap" id="colecaoConstrucoes"  style="max-height: 400px; overflow-y: scroll;">
+	
+	
+		<div class="d-flex align-items-cente sk-circle" id="contentItemBuild" *ngIf="load == true">
+		  <div class="sk-circle1 sk-child"></div>
+		  <div class="sk-circle2 sk-child"></div>
+		  <div class="sk-circle3 sk-child"></div>
+		  <div class="sk-circle4 sk-child"></div>
+		  <div class="sk-circle5 sk-child"></div>
+		  <div class="sk-circle6 sk-child"></div>
+		  <div class="sk-circle7 sk-child"></div>
+		  <div class="sk-circle8 sk-child"></div>
+		  <div class="sk-circle9 sk-child"></div>
+		  <div class="sk-circle10 sk-child"></div>
+		  <div class="sk-circle11 sk-child"></div>
+		  <div class="sk-circle12 sk-child"></div>
+		</div>
+	
+		<div class="d-flex align-items-cente" id="contentItemBuild" *ngFor="let construcao of construcoes" (click)="onSelect(construcao)"  style="min-height: 125px;"  
+		[class.selectedItem]="construcao.nome == nomeConstrucaoSelecionada" [class.sobreItem]="construcao.nome == costrucaoOver" 
+		(mouseover)="changeStyle(construcao.nome)" (mouseout)="changeStyle('')">
+			
+			<div class="card" [ngClass]="color" > 
+			
+			
+				<img class="mx-auto" width="45px" height="45px" style="margin-top: 5px;" src="{{construcao.img}}" alt="Card image cap">
+				<div class="bodyCard">
+				  <h4 class="card-title">{{construcao.nome}}</h4>
+				
+				</div>
+				<div class="card-footer">
+				 
+				 <table class="table table-sm centralizar">
+					  <thead>
+						<tr>
+						  <th class="centralizar">Madeira</th>
+						  <th>Minerio</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+						  <td>{{construcao.customadeira}}</td>
+						  <td>{{construcao.custominerio}}</td>
+						 
+						</tr>
+				  </table>
+				  
+				</div>
+			  </div>
+			 
+			</div>
+			
+			
+		</div>
+	
+
+  
+  
+	<div id="detailTileInfo" style="display:solid; height: 10%; background-color: #e3f2fd; border-bottom: 1px solid #007bff;">
+		<strong *ngIf="infoConstrucao != ''" style="border-bottom: 1px solid #008000;">{{construcaoSelecionada.info}}</strong>
+		
+	</div>
+  
+	<nav class="w-100 navbar navbar-light" id="detailTilefooter" style="background-color: #e3f2fd;">
+		
+		<ul class="w-100 nav justify-content-end">
+		
+		  <li id="nav-item" >
+			<a class="nav-link" >
+			
+				<div *ngIf="this.erroConstruir == ''" class="alert alert-primary" role="alert">
+				  Clique em construir para confirmar a seleção.
+				</div>
+				
+				<div *ngIf="this.erroConstruir == 'faltarecurso'" class="alert alert-warning" role="alert">
+				  Recursos insuficiente.
+				</div>
+				
+				<div *ngIf="this.erroConstruir == 'ocupado'" class="alert alert-danger" role="alert">
+				  Ja existe uma construção neste locao.
+				</div>
+				
+				<div *ngIf="this.erroConstruir == 'campoerrado'" class="alert alert-danger" role="alert">
+				  Esta construção não pode ser construida neste campo.
+				</div>
+				
+				<div *ngIf="this.erroConstruir == 'casaLider'" class="alert alert-success" role="alert">
+				  Vote tem sua 1° e mais importante costrucao!.
+				</div>
+				
+			</a>
+		  </li>
+		  
+		  <li id="nav-item"  (click)="criaConstrucao(0)">
+			<a class="nav-link" >
+				<button type="button" class="btn btn-success">Construir</button>
+			</a>
+		  </li>
+		
+		</ul>
+		
+	</nav>
+  
+</div>
+
+	
+	

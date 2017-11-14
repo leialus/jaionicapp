@@ -1,0 +1,129 @@
+# Blender MTL File: 'casa.blend'
+# Material Count: 10
+newmtl Material.002
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.465953 0.607192 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+
+newmtl Material.003
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.477642 0.631848 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+
+newmtl default.001_escada_default_color.jpg.001_escada.jpg
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd  assets\casa simples\OBJ\texturas\escada.jpg
+map_Ns  assets\casa simples\OBJ\texturas\escada_specular.jpg
+map_Bump  assets\casa simples\OBJ\texturas\escada_bump.jpg
+map_Ks  assets\casa simples\OBJ\texturas\escada_specular.jpg
+
+
+newmtl default.002_porta_default_color.jpg.001_porta_default_color.jpg.002
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd assets\casa simples\OBJ\texturas\porta.jpg
+map_Ns  assets\casa simples\OBJ\texturas\porta_specular.jpg
+map_Bump  assets\casa simples\OBJ\texturas\porta_bump.jpg
+map_Ks  assets\casa simples\OBJ\texturas\porta_specular.jpg
+
+
+newmtl default.003_janela_default_color.jpg.001
+Ns 98.039216
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd assets\casa simples\OBJ\texturas\janela.jpg
+map_Ns  assets\casa simples\OBJ\texturas\janela_specular.jpg
+map_Ks  assets\casa simples\OBJ\texturas\janela_specular.jpg
+map_Bump  assets\casa simples\OBJ\texturas\janela_bump.jpg
+
+
+newmtl default.004_ma�aneta_default_color.jpg
+Ns 98.039216
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd assets\casa simples\OBJ\texturas\maçaneta.jpg
+map_Ns  assets\casa simples\OBJ\texturas\maçaneta_specular.jpg
+map_Ks  assets\casa simples\OBJ\texturas\maçaneta_specular.jpg
+
+
+newmtl default.005_borda_janela_default_color.jpg.001_borda_janela_default_color.jpg.002
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd assets\casa simples\OBJ\texturas\borda_janela.jpg
+
+
+newmtl default.006_casa_teste.png
+Ns 98.039216
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd  assets\casa simples\OBJ\texturas\casa.png
+map_Ns  assets\casa simples\OBJ\texturas\casa_specular.jpg
+map_Bump  assets\casa simples\OBJ\texturas\casa_bump.jpg
+map_Ks  assets\casa simples\OBJ\texturas\casa_specular.jpg
+
+
+newmtl default_telhado_default_color.jpg.000_telhado_default_telhado_default_color.jpg.001_color.jpg.001
+Ns 98.039216
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd  assets\casa simples\OBJ\texturas\telhado.jpg
+map_Ns  assets\casa simples\OBJ\texturas\telhado_specular.jpg
+map_Ks  assets\casa simples\OBJ\texturas\telhado_specular.jpg
+
+
+newmtl default_telhado_default_color.jpg.002_chamine_default_telhado_default_color.jpg.001_color.jpg.001
+Ns 98.039216
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd assets\casa simples\OBJ\texturas\chamine.jpg
+map_Ns  assets\casa simples\OBJ\texturas\chamine_specular.jpg
+map_Bump  assets\casa simples\OBJ\texturas\chamine_bump.jpg
+map_Ks  assets\casa simples\OBJ\texturas\chamine_specular.jpg
+
+
